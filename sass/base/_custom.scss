@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Slabo+27px&display=swap');
+
+
+body{
+    background: #fff;
+    font: {
+        family: 'Montserrat', sans-serif;
+        size: 15px;
+    }
+}
+
+
+@for $i from 1 through 6 {
+    h#{$i}{
+        font-family: 'Slabo 27px', serif;
+        font-weight: 550;
+    }
+}

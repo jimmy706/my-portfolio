@@ -1,0 +1,26 @@
+.skills-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 70px;
+    grid-gap: 2.2rem;
+    .skill-group{
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+        h4{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+        }
+        ul{
+            list-style-type: disc;
+            padding-left: 15px;
+            li{
+                display: list-item;
+                text-align: -webkit-match-parent;
+                margin-bottom: 15px;
+                color: $paragraph;
+            }
+        }
+    }
+}

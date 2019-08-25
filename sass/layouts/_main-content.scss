@@ -1,0 +1,26 @@
+#main-content{
+    width: 100%;
+    padding: 50px 0;
+    overflow: {
+        y: auto;
+        x: hidden;
+    }
+    .greeting{
+        font-size: 4rem;
+        font-weight: 550;
+        letter-spacing: 4px;
+    }
+    .my-project{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        li{
+            display: inline-block;
+            margin-bottom: 3rem;        
+            width: 70%;
+            min-width: 440px;                                  
+        }
+    }
+}
+
