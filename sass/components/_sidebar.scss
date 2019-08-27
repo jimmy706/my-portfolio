@@ -1,7 +1,6 @@
 .sidebar{
     text-align: center;
     background-color: #efefef;
-    display: inline-block;
     min-height: 100vh;
     height: 100%;
     overflow-y: auto;
@@ -9,6 +8,8 @@
     min-width: 300px;
     box-sizing: border-box;
     position: relative;
+    z-index: 100;
+    transition: all 0.4s ease;
     .info-wrapper{
         .avatar{
             width: 10rem;
@@ -54,11 +55,56 @@
         }
     }
     .sidebar-footer{
-        position: absolute;
-        left: 50%;        
-        bottom: 30px;
         font-size: 12px;
-        transform: translateX(-50%);
         width: 100%;
+        margin-top: 270px;
+    }
+}
+
+#btn-toggle{
+    display: none;
+    position: fixed;
+    z-index: 70;
+}
+
+#toggle-nav{
+    display: none;
+}
+
+#overlay-mb{
+    opacity: 0.5;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: none;
+}
+
+@media screen and (max-width: 1024px){
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left: -100%;
+    }
+    #btn-toggle{
+        display: block;  
+        background-color: $black;
+        padding: 20px;
+        color: $white;   
+        font-size: 1rem;   
+    }
+    #toggle-nav:checked ~ .sidebar{
+        left: 0;
+    }
+
+    #toggle-nav:checked ~ #overlay-mb{
+        display: block;
+    }
+
+    .sidebar{
+        left: -100%;
     }
 }

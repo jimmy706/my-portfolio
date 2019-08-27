@@ -85,6 +85,7 @@ nav ul li {
 
 body {
   background: #fff;
+  overflow: hidden;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px; }
 
@@ -127,6 +128,14 @@ h6 {
   margin-right: auto;
   max-width: 1200px; }
 
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem; } }
+@media screen and (max-width: 500px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem; } }
 #main-content {
   width: 100%;
   padding: 50px 0;
@@ -145,19 +154,20 @@ h6 {
       display: inline-block;
       margin-bottom: 3rem;
       width: 70%;
-      min-width: 440px; }
+      min-width: 300px; }
 
 .sidebar {
   text-align: center;
   background-color: #efefef;
-  display: inline-block;
   min-height: 100vh;
   height: 100%;
   overflow-y: auto;
   padding: 30px;
   min-width: 300px;
   box-sizing: border-box;
-  position: relative; }
+  position: relative;
+  z-index: 100;
+  transition: all 0.4s ease; }
   .sidebar .info-wrapper .avatar {
     width: 10rem;
     height: 10rem;
@@ -191,13 +201,50 @@ h6 {
         .sidebar .link-list a:hover::before, .sidebar .link-list a.active::before {
           transform: scale(1); }
   .sidebar .sidebar-footer {
-    position: absolute;
-    left: 50%;
-    bottom: 30px;
     font-size: 12px;
-    transform: translateX(-50%);
-    width: 100%; }
+    width: 100%;
+    margin-top: 270px; }
 
+#btn-toggle {
+  display: none;
+  position: fixed;
+  z-index: 70; }
+
+#toggle-nav {
+  display: none; }
+
+#overlay-mb {
+  opacity: 0.5;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: none; }
+
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; }
+
+  #btn-toggle {
+    display: block;
+    background-color: #000;
+    padding: 20px;
+    color: #fff;
+    font-size: 1rem; }
+
+  #toggle-nav:checked ~ .sidebar {
+    left: 0; }
+
+  #toggle-nav:checked ~ #overlay-mb {
+    display: block; }
+
+  .sidebar {
+    left: -100%; } }
 .title {
   font-size: 2rem;
   font-weight: 550;
@@ -225,6 +272,18 @@ h6 {
   .btn:hover {
     color: #fff;
     background: #000; }
+
+#btn-top {
+  position: fixed;
+  bottom: 30px;
+  right: -40px;
+  padding: 15px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  font-size: 1rem;
+  transition: all 0.4s ease; }
 
 .project-comp {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -332,5 +391,12 @@ h6 {
         text-align: -webkit-match-parent;
         margin-bottom: 15px;
         color: #444; }
+
+@media screen and (max-width: 750px) {
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr); } }
+@media screen and (max-width: 550px) {
+  .skills-list {
+    grid-template-columns: repeat(1, 1fr); } }
 
 /*# sourceMappingURL=main.css.map */
