@@ -1,0 +1,54 @@
+#preload{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 999;
+    opacity: 1;
+    .spinner{
+        width: 70px;
+        height: 70px;
+        position: relative;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            color: #333;
+            border-radius: 50%;
+            animation: spinning 1.5s linear infinite;
+            box-shadow: inset -5px 0 0 5px currentColor;
+            clip-path:polygon(0 0,100% 0, 100% 50%, 0 50%);
+        }
+    }
+    &.loaded{
+        transition: all 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes spinning{
+    0%{
+        transform: rotate(0deg);
+        box-shadow: inset -5px 0 0 5px currentColor;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: inset -1px 0 0 1px currentColor;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: inset -5px 0 0 5px currentColor;
+    }
+}
