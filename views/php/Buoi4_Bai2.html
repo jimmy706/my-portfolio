@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Buổi 4 - bài 2 </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="title">
+			<h1>Bài 2 - Buổi 4</h1>
+		</div>
+		<!--end div title-->
+		<div id="menu">
+			<!-- chèn menu của sinh viên vào-->
+		</div>
+		<!--end div menu-->
+		<div id="content">
+			<!--Nội dung trang web-->
+			<h1>Slide show</h1>
+
+			<form>
+				<img id="laptopImg" src="img/hp.jpg" height="300" width="300" />
+				<br />
+				<input type="button" name="previous" value="Previous" onclick="changeSlide(-1)">
+				<input type="button" name="next" value="Next" onclick="changeSlide(1)">
+				<br />
+				<select id="laptopSel" name="laptopSel" onchange="chooseSlide(value)">
+					<option value="0">HP</option>
+					<option value="1">Dell</option>
+					<option value="2">Acer</option>
+					<option value="3">Asus</option>
+				</select>
+			</form>
+		</div>
+		<div id="footer">
+			<p>Họ tên SV: Đặng Quốc Dũng <br /> Email:b1709272 </p>
+		</div>
+	</div>
+	<script>
+		const img = document.getElementById("laptopImg");
+		const laptopSel = document.getElementById("laptopSel");
+		const imagePaths = ["img/hp.jpg", "img/dell.jpg", "img/acer.jpg", "img/asus.jpg"];
+
+
+
+		/* 
+		 	TODO: Move forward when val = 1, val = -1 move backward
+		*/
+		function changeSlide(val) {
+			let currentIndex = imagePaths.findIndex((path) => path === img.getAttribute("src"));
+			currentIndex += val;
+			if (currentIndex === imagePaths.length) {
+				currentIndex = 0;
+			}
+			else if (currentIndex < 0) {
+				currentIndex = imagePaths.length - 1;
+			}
+			img.setAttribute("src", imagePaths[currentIndex]);
+			laptopSel.value = currentIndex;
+		}
+
+		function chooseSlide(index) {
+			img.setAttribute("src", imagePaths[index]);
+		}
+	</script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(empty($_SESSION['userId'])){
-        header("Location: ./index.php");
+        header("Location: ./index.html");
     }    
 ?>
 
@@ -62,6 +62,7 @@
                 echo "<h2 class='title'>Chào bạn " .$row['tendangnhap'] . "!</h2>";                
             }
         ?>
+        <a href="./add-product.php">Thêm sản phẩm</a>
         <p>Danh sách sản phẩm của bạn là:</p>
         <table>
             <tr>
@@ -93,6 +94,7 @@
         </table>
          <form method='POST' action='logout.php'>
             <button class='log-out' type='submit'>Đăng xuất</button>
+            <a href="./Buoi4_Bai4.php">Xem danh sách sản phẩm slideshow</a>
         </form>
     </div>
     
