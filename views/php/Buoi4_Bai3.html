@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Lập trình web (CT428) </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="title">
+            <h1>Bài 3 - Buổi 4</h1>
+        </div>
+        <div id="menu">
+        </div>
+        <div id="content">
+            <h1>Quảng cáo</h1>
+
+            <a href="http://www.hp.com" target="_blank" id="link">
+                <img name="laptopImg" src="img/hp.jpg" height="300" width="300" onmouseover="pauseTimer()"
+                    onmouseout="activateTimer()" />
+            </a>
+
+        </div>
+        <div id="footer">
+            <p>Họ tên SV: Đặng Quốc Dũng<br /> Email: dungb1709272@student.ctu.edu.vn</p>
+        </div>
+    </div>
+    <script>
+        const imagePaths = ["img/hp.jpg", "img/dell.jpg", "img/acer.jpg", "img/asus.jpg"];
+        const urls = ["https://www.hp.com", "https://www.dell.com", "https://www.acer.com", "https://www.asus.com"];
+        const link = document.getElementById("link");
+        const img = link.querySelector("img");
+
+        let interval;
+
+        function pauseTimer() {
+            clearInterval(interval)
+        }
+
+        function activateTimer() {
+            interval = setInterval(() => {
+                let currentIndex = imagePaths.findIndex((path) => path === img.getAttribute("src"));
+                currentIndex++;
+                if (currentIndex === imagePaths.length) {
+                    currentIndex = 0;
+                }
+                img.setAttribute("src", imagePaths[currentIndex]);
+                link.setAttribute("href", urls[currentIndex]);
+            }, 2000);
+        }
+        activateTimer();
+    </script>
+</body>
+
+</html>

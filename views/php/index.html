@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        h1 {
+            color: red;
+            text-align: center;
+            display: block;
+        }
+
+        table {
+            background: #ddd;
+            padding: 15px;
+            border: 1px solid #000;
+            margin: 0 auto
+        }
+    </style>
+    <title>Đăng nhập</title>
+</head>
+
+<body>
+    <form action="handle-login.php" method="post" id="login-form">
+        <h1>Đăng nhập</h1>
+        <table>
+            <tr>
+                <td>Tên đăng nhập: </td>
+                <td><input type="text" name="username" pattern="^[A-Za-z][A-Za-z0-9]{5,15}" required
+                        title="Tên đăng nhập phải có từ 6-15 kí tự và phải bắt đầu bằng chữ cái">
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu: </td>
+                <td><input type="password" name="password" required pattern="[a-zA-Z0-9]{6,15}"
+                        title="Mật khẩu chỉ có chữ cái và số, dài từ 6 - 15 kí tự"></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <button type="submit">Đăng nhập</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    chưa có tài khoản? <a href="./signup.html">Đăng kí</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

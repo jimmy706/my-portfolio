@@ -23,7 +23,7 @@
     $result = $connect->query($sql);
     if (mysqli_num_rows($result)==0) { // TODO: ko thấy user
         $connect->close();
-        header("Location: ./index.php");
+        header("Location: ./index.html");
     }
     else{
         while($row = $result->fetch_assoc()){
@@ -34,7 +34,7 @@
                 break;
             }
             $connect->close();
-            header("Location: ./index.php");            
+            header("Location: ./index.html");            
         }        
     }
 ?>

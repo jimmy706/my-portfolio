@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        h1 {
+            color: red;
+            text-align: center
+        }
+
+        #signup-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        table {
+            background: #ddd;
+            padding: 15px;
+            border: 1px solid #000;
+            margin: 0 auto
+        }
+
+        #error-message {
+            margin: 15px auto;
+            color: rgb(255, 227, 227);
+            text-align: left;
+            background-color: red;
+            padding: 15px;
+            border: 1px solid black;
+            display: none;
+            list-style-type: none;
+        }
+    </style>
+    <title>Buổi 1 bài 2</title>
+</head>
+
+<body>
+    <h1>Đăng ký tài khoản mới</h1>
+    <p style="text-align: center">Vui lòng điền đầy đủ thông tin bên dưới để đăng ký tài khoản</p>
+    <form method="POST" enctype="multipart/form-data" name="signup-form" id="signup-form" action="./handle-signup.php">
+        <ul id="error-message">
+
+        </ul>
+        <table>
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td>
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Gõ lại mật khẩu</td>
+                <td><input type="password" name="rePassword"></td>
+            </tr>
+            <tr>
+                <td>Hình đại diện</td>
+                <td><input type="file" name="avatar"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <input type="radio" value="male" checked name="sex"> <span>Nam</span>
+                    <input type="radio" value="female" name="sex"> <span>Nữ</span>
+                    <input type="radio" value="dif" name="sex"> <span>Khác</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select name="job">
+                        <option value="student">Học sinh</option>
+                        <option value="teacher">Giáo viên</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Sở thích</td>
+                <td>
+                    <input type="checkbox" value="sport" name="hobbies[]"> Thể thao
+                    <input type="checkbox" value="travel" name="hobbies[]"> Du lịch
+                    <input type="checkbox" value="music" name="hobbies[]"> Âm nhạc
+                    <input type="checkbox" value="fashion" name="hobbies[]"> Thời trang
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Đăng kí</button>
+                </td>
+                <td>
+                    <button type="reset">Làm lại</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+    <script>
+        const form = document.getElementById("signup-form");
+        const errorMessageWrapper = document.getElementById("error-message");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            let errors = [];
+            const username = form.querySelector("input[name='username']").value;
+            const password = form.querySelector("input[name='password']").value;
+            const rePassword = form.querySelector("input[name='rePassword']").value;
+            const avatar = form.querySelector("input[name='avatar']").files;
+
+            // TODO: handle username input
+            if (username.trim() === '') {
+                errors.push("Tên đăng nhập không được trống");
+            }
+            else if (!username.match(/^[a-zA-Z][a-zA-Z0-9]{5,15}/g)) {
+                errors.push("Tên đăng nhập phải có từ 6-15 kí tự và phải bắt đầu bằng chữ cái");
+            }
+
+            // TODO: handle password input
+            if (password.trim() === '') {
+                errors.push("Mật khẩu không được trống");
+            }
+            else if (!password.match(/^[a-zA-Z0-9]{6,15}/g)) {
+                errors.push("Mật khẩu phải có từ 6-15 kí tự và không có kí tự đặc biệt");
+            }
+            else if (rePassword !== password) {
+                errors.push("Mật khẩu nhập lại không chính khớp");
+            }
+
+            // TODO: handle avatar file
+            if (!avatar.length) {
+                errors.push("Yêu cầu chọn avatar");
+            }
+
+            if (errors.length !== 0) {
+                errorMessageWrapper.style.display = "inline-block";
+                errorMessageWrapper.innerHTML = errors.map(error => `<li>${error}</li>`).join("");
+            }
+
+
+            else {
+                form.submit();
+            }
+        })
+    </script>
+</body>
+
+</html>

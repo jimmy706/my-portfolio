@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(empty($_SESSION['userId'])){
-        header("Location: ./index.php");
+        header("Location: ./index.html");
     }    
 ?>
 
@@ -63,6 +63,7 @@
             }
         ?>
         <a href="./information.php">Về trang cá nhân</a>
+        <a href="./add-product.php">Thêm sản phẩm</a>
         <p>Danh sách sản phẩm của bạn là:</p>
         <table>
             <tr>
@@ -94,6 +95,7 @@
         </table>
          <form method='POST' action='logout.php'>
             <button class='log-out' type='submit'>Đăng xuất</button>
+            <a href="./Buoi4_Bai4.php">Xem danh sách sản phẩm slideshow</a>
         </form>
     </div>
     
