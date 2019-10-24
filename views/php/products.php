@@ -62,6 +62,7 @@
                 echo "<h2 class='title'>Chào bạn " .$row['tendangnhap'] . "!</h2>";                
             }
         ?>
+        <a href="./information.php">Về trang cá nhân</a>
         <p>Danh sách sản phẩm của bạn là:</p>
         <table>
             <tr>
