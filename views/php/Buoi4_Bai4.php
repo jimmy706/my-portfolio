@@ -25,20 +25,10 @@
         }
             echo "<button onClick='changeSlide(-1)'>Prev</button>";
             echo "<button onClick='changeSlide(1)'>Next</button>";
-            echo '
-                <select id="laptopSel" name="laptopSel" onchange="chooseSlide(value)">
-					<option value="0">HP</option>
-					<option value="1">Dell</option>
-					<option value="2">Acer</option>
-					<option value="3">Asus</option>
-				</select>
-            
-            ';
         echo "</div>";
     ?>
     <script>
         const images = [...document.getElementsByClassName("img-slideshow")];
-        const laptopSel = document.getElementById("laptopSel");
         let currentIndex = 0;
 
         function changeImgDisplay(index){
@@ -56,10 +46,6 @@
 			}
 			changeImgDisplay(currentIndex);
             laptopSel.value = currentIndex;
-		}
-
-		function chooseSlide(index) {
-			changeImgDisplay(index);
 		}
 
         changeImgDisplay(currentIndex);
