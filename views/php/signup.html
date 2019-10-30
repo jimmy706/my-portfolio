@@ -118,7 +118,7 @@
             if (username.trim() === '') {
                 errors.push("Tên đăng nhập không được trống");
             }
-            else if (!username.match(/^[a-zA-Z][a-zA-Z0-9]{5,15}/g)) {
+            else if (!username.match(/^[a-zA-Z][a-zA-Z0-9]{5,14}/g)) {
                 errors.push("Tên đăng nhập phải có từ 6-15 kí tự và phải bắt đầu bằng chữ cái");
             }
 
@@ -126,7 +126,7 @@
             if (password.trim() === '') {
                 errors.push("Mật khẩu không được trống");
             }
-            else if (!password.match(/^[a-zA-Z0-9]{6,15}/g)) {
+            else if (!password.match(/^[a-zA-Z0-9]{5,14}/g)) {
                 errors.push("Mật khẩu phải có từ 6-15 kí tự và không có kí tự đặc biệt");
             }
             else if (rePassword !== password) {

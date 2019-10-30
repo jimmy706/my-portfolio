@@ -1,157 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Dang Quoc Dung" />
+    <!-- TODO: font awesome kit -->
+    <script src="https://kit.fontawesome.com/3abb389bc3.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="author" content="Dang Quoc Dung" />
-  <!-- TODO: font awesome kit -->
-  <script src="https://kit.fontawesome.com/3abb389bc3.js"></script>
-  <link rel="stylesheet" href="../css/main.css" />
+    <title>About me</title>
+  </head>
 
-  <title>About me</title>
-</head>
-
-<body>
-  <div id="preload">
-    <div class="spinner"></div>
-  </div>
-  <div class="wrapper">
-    <label for="toggle-nav" id="btn-toggle">
-      <i class="fas fa-bars"></i>
-    </label>
-    <input type="checkbox" id="toggle-nav" />
-    <div id="overlay-mb"></div>
-    <nav class="sidebar">
-      <div class="info-wrapper">
-        <img src="../img/me.jpg" alt="My avatar" class="avatar" />
-        <h1 class="my-name">Dang Quoc Dung</h1>
-        <p class="my-job">Full-stack web developer</p>
-        <ul class="social-list">
+  <body>
+    <div id="preload">
+      <div class="spinner"></div>
+    </div>
+    <div class="wrapper">
+      <label for="toggle-nav" id="btn-toggle">
+        <i class="fas fa-bars"></i>
+      </label>
+      <input type="checkbox" id="toggle-nav" />
+      <div id="overlay-mb"></div>
+      <nav class="sidebar">
+        <div class="info-wrapper">
+          <img src="../img/me.jpg" alt="My avatar" class="avatar" />
+          <h1 class="my-name">Dang Quoc Dung</h1>
+          <p class="my-job">Full-stack web developer</p>
+          <ul class="social-list">
+            <li>
+              <a
+                href="https://github.com/jimmy706"
+                target="_blank"
+                title="Github"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/jim.dangquoc"
+                target="_blank"
+                title="Facebook"
+              >
+                <i class="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/%C4%91%E1%BA%B7ng-d%C5%A9ng-843588163/"
+                target="_blank"
+                title="Linkedin"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="link-list">
           <li>
-            <a href="https://github.com/jimmy706" target="_blank" title="Github">
-              <i class="fab fa-github"></i>
-            </a>
+            <a href="../index.html" title="Home">Home</a>
           </li>
           <li>
-            <a href="https://www.facebook.com/jim.dangquoc" target="_blank" title="Facebook">
-              <i class="fab fa-facebook-square"></i>
-            </a>
+            <a href="./about.html" title="About" class="active">About</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/%C4%91%E1%BA%B7ng-d%C5%A9ng-843588163/" target="_blank"
-              title="Linkedin">
-              <i class="fab fa-linkedin"></i>
-            </a>
+            <a href="./education.html" title="Education">Education</a>
+          </li>
+          <li>
+            <a href="./skills.html" title="Skills">Skills</a>
+          </li>
+          <li>
+            <a href="#" title="Contact">Contact</a>
           </li>
         </ul>
-      </div>
-      <ul class="link-list">
-        <li>
-          <a href="../index.html" title="Home">Home</a>
-        </li>
-        <li>
-          <a href="./about.html" title="About" class="active">About</a>
-        </li>
-        <li>
-          <a href="./education.html" title="Education">Education</a>
-        </li>
-        <li>
-          <a href="./skills.html" title="Skills">Skills</a>
-        </li>
-        <li>
-          <a href="#" title="Contact">Contact</a>
-        </li>
-      </ul>
-      <footer class="sidebar-footer">
-        <p>Copyright ©️ 2019 by Dung Dang</p>
-        <p>Make with ❤️ and 🙌</p>
-      </footer>
-    </nav>
-    <main id="main-content">
-      <div class="container">
-        <h2 class="title">Homework:</h2>
-        <p>
-          <strong>Note:</strong>
-          This is my about page, but now use for my "web programming" class
-        </p>
-        <h1>Chapter 1.1:</h1>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Buổi 1 - HTML</th>
-              <th>Buổi 2 - CSS</th>
-              <th>Buổi 3 - PHP</th>
-              <th>Buổi 4 - JAVASCRIPT</th>
-              <th>Thứ 5 - AJAX</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="./buoi1_bai1.html">Bài 1</a>
-              </td>
-              <td>
-                <a href="./buoi2_bai1.html">Bài 1</a>
-              </td>
-              <td>
-                <a href="./php/signup.php">Bài 1</a>
-              </td>
-              <td>
-                <a href="./php/signup.html">Bài 1</a>
-              </td>
-              <td>
-                <a href="/">Bài 1</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="./buoi1_bai2.html">Bài 2</a>
-              </td>
-              <td>
-                <a href="./buoi2_bai2.html">Bài 2</a>
-              </td>
-              <td>
-                <a href="./php/index.php">Bài 2</a>
-                <!-- TODO: trang đăng nhập -->
-              </td>
-              <td>
-                <a href="./php/Buoi4_Bai2.html">Bài 2</a>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <a href="./buoi2_bai3.html">Bài 3</a>
-              </td>
-              <td>
-                <a href="./php/add-product.php">Bài 3 (Yêu cầu đăng nhập)</a>
-              </td>
-              <td>
-                <a href="./php/Buoi4_Bai3.html">Bài 3</a>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td>
-                <a href="./php/products.php">Bài 4 (Yêu cầu đăng nhập)</a>
-              </td>
-              <td><a href="./php/Buoi4_Bai4.php">Bài 4 (Yêu cầu đăng nhập)</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-  </div>
-  <button id="btn-top">
-    <i class="fas fa-angle-double-up"></i>
-  </button>
+        <footer class="sidebar-footer">
+          <p>Copyright ©️ 2019 by Dung Dang</p>
+          <p>Make with ❤️ and 🙌</p>
+        </footer>
+      </nav>
+      <main id="main-content">
+        <div class="container">
+          <h2 class="title">Homework:</h2>
+          <p>
+            <strong>Note:</strong>
+            This is my about page, but now use for my "web programming" class
+          </p>
+          <h1>Chapter 1.1:</h1>
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Buổi 1 - HTML</th>
+                <th>Buổi 2 - CSS</th>
+                <th>Buổi 3 - PHP</th>
+                <th>Buổi 4 - JAVASCRIPT</th>
+                <th>Thứ 5 - AJAX</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="./buoi1_bai1.html">Bài 1</a>
+                </td>
+                <td>
+                  <a href="./buoi2_bai1.html">Bài 1</a>
+                </td>
+                <td>
+                  <a href="./php/signup.html">Bài 1</a>
+                </td>
+                <td>
+                  <a href="./php/signup.html">Bài 1</a>
+                </td>
+                <td>
+                  <a href="/">Bài 1</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="./buoi1_bai2.html">Bài 2</a>
+                </td>
+                <td>
+                  <a href="./buoi2_bai2.html">Bài 2</a>
+                </td>
+                <td>
+                  <a href="./php/index.html">Bài 2</a>
+                  <!-- TODO: trang đăng nhập -->
+                </td>
+                <td>
+                  <a href="./php/Buoi4_Bai2.html">Bài 2</a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <a href="./buoi2_bai3.html">Bài 3</a>
+                </td>
+                <td>
+                  <a href="./php/add-product.php">Bài 3 (Yêu cầu đăng nhập)</a>
+                </td>
+                <td>
+                  <a href="./php/Buoi4_Bai3.html">Bài 3</a>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="./php/products.php">Bài 4 (Yêu cầu đăng nhập)</a>
+                </td>
+                <td>
+                  <a href="./php/Buoi4_Bai4.php">Bài 4 (Yêu cầu đăng nhập)</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <button id="btn-top">
+      <i class="fas fa-angle-double-up"></i>
+    </button>
 
-  <script src="../js/responsive.js"></script>
-  <script src="../js/scroll.js"></script>
-  <script src="../js/preload.js"></script>
-</body>
-
+    <script src="../js/responsive.js"></script>
+    <script src="../js/scroll.js"></script>
+    <script src="../js/preload.js"></script>
+  </body>
 </html>

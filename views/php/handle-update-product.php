@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(empty($_SESSION['userId'])){
-        header("Location: ./index.php");
+        header("Location: ./index.html");
     }
     $idsp = $_POST['idsp'];
     $tensp = $_POST['tensp'];

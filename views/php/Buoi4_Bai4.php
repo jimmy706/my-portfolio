@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(empty($_SESSION['userId'])){
-        header("Location: ./index.html");
+        header("Location: index.html");
     }    
 ?>
 
