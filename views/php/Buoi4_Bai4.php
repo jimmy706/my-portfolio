@@ -45,7 +45,6 @@
 				currentIndex = images.length - 1;
 			}
 			changeImgDisplay(currentIndex);
-            laptopSel.value = currentIndex;
 		}
 
         changeImgDisplay(currentIndex);

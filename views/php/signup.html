@@ -105,10 +105,10 @@
     <script>
         const form = document.getElementById("signup-form");
         const errorMessageWrapper = document.getElementById("error-message");
-
+        let errors = [];
         form.addEventListener("submit", function (e) {
             e.preventDefault();
-            let errors = [];
+            errors = [];
             const username = form.querySelector("input[name='username']").value;
             const password = form.querySelector("input[name='password']").value;
             const rePassword = form.querySelector("input[name='rePassword']").value;
@@ -142,10 +142,35 @@
                 errorMessageWrapper.style.display = "inline-block";
                 errorMessageWrapper.innerHTML = errors.map(error => `<li>${error}</li>`).join("");
             }
-
-
             else {
                 form.submit();
+            }
+        })
+    </script>
+
+    <script>
+        const username = form.querySelector("input[name='username']");
+        username.addEventListener("focusout", function (e) {
+            errors = errors.filter(err => err !== "Tên đăng nhập đã tồn tại");
+            const username = this.value.trim();
+            if (username !== '') {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        const response = this.responseText;
+                        if (parseInt(response) > 0) {
+                            errors.push("Tên đăng nhập đã tồn tại");
+                        }
+                        if (errors.length !== 0) {
+                            errorMessageWrapper.style.display = "inline-block";
+                            errorMessageWrapper.innerHTML = errors.map(error => `<li>${error}</li>`).join("");
+                        } else {
+                            errorMessageWrapper.style.display = "none";
+                        }
+                    }
+                }
+                xhttp.open("GET", `check_username.php?username=${username}`, true);
+                xhttp.send();
             }
         })
     </script>
