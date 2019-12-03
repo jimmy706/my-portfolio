@@ -471,4 +471,11 @@ h6 {
     width: 100%;
     height: 250px; }
 
+@media screen and (max-width: 768px) {
+  .about-item {
+    flex-direction: column;
+    justify-content: center; }
+    .about-item .left, .about-item .right {
+      margin: 40px 0; } }
+
 /*# sourceMappingURL=main.css.map */
