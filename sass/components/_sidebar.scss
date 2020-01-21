@@ -1,4 +1,4 @@
-.sidebar{
+.sidebar {
     text-align: center;
     background-color: #efefef;
     min-height: 100vh;
@@ -10,32 +10,38 @@
     position: relative;
     z-index: 100;
     transition: all 0.4s ease;
-    .info-wrapper{
-        .avatar{
+
+    .info-wrapper {
+        .avatar {
             width: 10rem;
             height: 10rem;
             border-radius: 50%;
         }
-        h1{
+
+        h1 {
             font-size: 1.4rem;
             font-weight: 550;
         }
+
         .social-list {
-            li{
+            li {
                 margin-right: 15px;
             }
         }
     }
-    .link-list{
+
+    .link-list {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        a{
+
+        a {
             line-height: 3;
             transition: color 0.2s ease;
             position: relative;
-            &::before{
+
+            &::before {
                 content: '';
                 display: block;
                 width: 100%;
@@ -46,32 +52,37 @@
                 transform: scale(0);
                 transition: transform 0.2s ease;
             }
-            &:hover, &.active{
+
+            &:hover,
+            &.active {
                 color: $active-link;
-                &::before{
+
+                &::before {
                     transform: scale(1);
                 }
             }
         }
     }
-    .sidebar-footer{
+
+    .sidebar-footer {
         font-size: 12px;
         width: 100%;
-        margin-top: 270px;
+        margin-top: 220px;
+        margin-bottom: 15px;
     }
 }
 
-#btn-toggle{
+#btn-toggle {
     display: none;
     position: fixed;
     z-index: 70;
 }
 
-#toggle-nav{
+#toggle-nav {
     display: none;
 }
 
-#overlay-mb{
+#overlay-mb {
     opacity: 0.5;
     background-color: #000;
     position: fixed;
@@ -83,28 +94,30 @@
     display: none;
 }
 
-@media screen and (max-width: 1024px){
-    .sidebar{
+@media screen and (max-width: 1024px) {
+    .sidebar {
         position: fixed;
         top: 0;
         left: -100%;
     }
-    #btn-toggle{
-        display: block;  
+
+    #btn-toggle {
+        display: block;
         background-color: $black;
         padding: 20px;
-        color: $white;   
-        font-size: 1rem;   
+        color: $white;
+        font-size: 1rem;
     }
-    #toggle-nav:checked ~ .sidebar{
+
+    #toggle-nav:checked~.sidebar {
         left: 0;
     }
 
-    #toggle-nav:checked ~ #overlay-mb{
+    #toggle-nav:checked~#overlay-mb {
         display: block;
     }
 
-    .sidebar{
+    .sidebar {
         left: -100%;
     }
 }
