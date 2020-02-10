@@ -64,7 +64,7 @@ const educationPageData = [
       {
         time: "Dec",
         content: "Started intern at AppcoreVN",
-        img: "../img/appcore.jpg"
+        img: "/img/appcore.jpg"
       }
     ]
   }

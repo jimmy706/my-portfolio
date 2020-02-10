@@ -1,28 +1,28 @@
-.btn{
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    text-transform: capitalize;
-    border: 1px solid $black;
-    border-radius: 3px;
-    padding: 5px 10px;
-    background: $white;
-    transition: all 0.3s ease-out;
-    &:hover{
-        color: $white;
-        background: $black;
-    }
+.btn {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 1px solid $black;
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: $white;
+  transition: all 0.3s ease-out;
+  &:hover {
+    color: $white;
+    background: $black;
+  }
 }
 
-#btn-top{
-    position: fixed;
-    bottom: 30px;
-    right: -40px;
-    padding: 15px;
-    background: $black;
-    color: $white;
-    cursor: pointer;
-    border: 0;
-    font-size: 1rem;
-    transition: all 0.4s ease;
+#btn-top {
+  position: fixed;
+  bottom: 30px;
+  right: -60px;
+  padding: 15px;
+  background: $black;
+  color: $white;
+  cursor: pointer;
+  border: 0;
+  font-size: 1rem;
+  transition: all 0.4s ease;
 }
