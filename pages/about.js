@@ -1,6 +1,5 @@
 import Layout from "../components/Layout.comp";
 import MainContent from "../components/MainContent.comp";
-import "../sass/main.scss";
 import Head from "next/head";
 
 function AboutPage() {
@@ -15,8 +14,7 @@ function AboutPage() {
           <h2 className="title">About me:</h2>
           <div className="about-item">
             <div className="left">
-              <img src="/img/about1.jpg" alt="About me" />
-              <div className="black-block"></div>
+              <img src="/img/about1.png" alt="About me" />
             </div>
             <div className="right">
               <p>
@@ -24,14 +22,6 @@ function AboutPage() {
                 with 1 year experience in JavaScript and React. With a good
                 self-taught and a strong passion in programming.
               </p>
-            </div>
-          </div>
-          <div className="about-item">
-            <div className="right">
-              <img src="/img/about2.png" alt="About me" />
-              <div className="black-block"></div>
-            </div>
-            <div className="left">
               <p>
                 I like helping other and work well with group. I can also do
                 some mentoring tasks and code reviewing for other members. I
@@ -39,6 +29,7 @@ function AboutPage() {
               </p>
             </div>
           </div>
+
         </MainContent>
       </Layout>
     </div>

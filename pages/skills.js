@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/Layout.comp";
 import MainContent from "../components/MainContent.comp";
-import "../sass/main.scss";
 
 function SkillsPage() {
   return (
@@ -20,6 +19,7 @@ function SkillsPage() {
                 <li>HTML, CSS</li>
                 <li>JavaScript</li>
                 <li>Java</li>
+                <li>Python</li>
               </ul>
             </div>
             <div className="skill-group">
@@ -43,6 +43,7 @@ function SkillsPage() {
                 <li>Bootstrap</li>
                 <li>ExpressJS</li>
                 <li>Spring, Spring Boot, Spring Security</li>
+                <li>Django</li>
               </ul>
             </div>
             <div className="skill-group">

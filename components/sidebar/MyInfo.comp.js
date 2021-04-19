@@ -5,7 +5,7 @@ export default function MyInfo() {
     <div className="info-wrapper">
       <img src="/img/me.jpg" alt="My avatar" className="avatar" />
       <h1 className="my-name">Dang Quoc Dung</h1>
-      <p className="my-job">Full-stack web developer</p>
+      <p className="my-job">Web developer</p>
       <ul className="social-list">
         <li>
           <a href="https://github.com/jimmy706" target="_blank" title="Github">

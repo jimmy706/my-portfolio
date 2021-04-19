@@ -34,6 +34,16 @@ export default function NavLinkList() {
         </Link>
       </li>
       <li>
+        <Link href="/experiences">
+          <a
+            title="Education"
+            className={classNames({ active: asPath === "/experiences" })}
+          >
+            Experiences
+          </a>
+        </Link>
+      </li>
+      <li>
         <Link href="/skills">
           <a
             title="Skills"

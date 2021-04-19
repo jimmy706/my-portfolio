@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout.comp";
 import MainContent from "../components/MainContent.comp";
-import "../sass/main.scss";
 import educationPage from "../constant/education-page.data";
 import Head from "next/head";
 

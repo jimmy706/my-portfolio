@@ -1,36 +1,28 @@
 .about-item {
     display: flex;
-    margin: 80px 0;
-
+    margin-bottom: 80px;
+    font-size: 1.1rem;
+    align-items: center;
     img {
         width: 100%;
-        height: 300px;
-        max-width: 450px;
+        height: auto;
         position: relative;
         z-index: 10;
         display: block;
+        box-shadow: 10px 10px 0px 2px #43434180;
     }
 
     .left {
         order: 1;
         position: relative;
         flex: 1;
-        padding-right: 20px;
+        padding-right: 50px;
     }
 
     .right {
         order: 2;
         position: relative;
         flex: 1;
-    }
-
-    .black-block {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        background: #434343;
-        width: 100%;
-        height: 250px;
     }
 }
 

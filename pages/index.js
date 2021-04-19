@@ -1,10 +1,12 @@
+import fs from 'fs';
+import matter from 'gray-matter';
 import Layout from "../components/Layout.comp";
 import MainContent from "../components/MainContent.comp";
-import "../sass/main.scss";
 import HomeData from "../constant/home.data";
 import Head from "next/head";
+import dayjs from 'dayjs';
 
-function ProjectItem(props) {
+function BlogItem(props) {
   const { projectName, desc, source, demo, madeBy } = props.projectDetail;
   return (
     <li>
@@ -46,11 +48,12 @@ function ProjectItem(props) {
   );
 }
 
-function HomePage() {
-  function renderMyProject() {
-    return HomeData.map(project => (
-      <ProjectItem projectDetail={project} key={project.projectName} />
-    ));
+function HomePage(props) {
+
+  console.log(props)
+
+  function renderBlogs(posts) {
+    return posts.map(p => <BlogItem blog={blog} />)
   }
 
   return (
@@ -61,16 +64,40 @@ function HomePage() {
       </Head>
       <Layout>
         <MainContent>
-          <h1 className="greeting">
-            <p>Hi! I am a</p>
-            <p>Web developer</p>
-          </h1>
-          <h2 className="title">My project:</h2>
-          <ul className="my-project">{renderMyProject()}</ul>
+          <ul>
+
+          </ul>
         </MainContent>
       </Layout>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const files = fs.readdirSync("blogs");
+
+  const posts = files.map((filename) => {
+
+    const markdownContent = fs.readFileSync(`blogs/${filename}`).toString();
+    const markdownToObject = matter(markdownContent);
+    const { title, description, preview_image } = markdownToObject.data;
+    const stats = fs.statSync(`blogs/${filename}`);
+
+    return {
+      slug: filename.replace('.md', ''),
+      title,
+      description,
+      preview_image,
+      date: dayjs(stats.mtime).format('ddd DD/MM/YYYY')
+    }
+  })
+  return {
+    props: {
+      page: 1,
+      results: posts,
+      count: posts.length
+    }
+  }
 }
 
 export default HomePage;

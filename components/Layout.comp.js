@@ -8,7 +8,7 @@ function Layout(props) {
       <button id="btn-toggle" onClick={() => setOpenNav(!openNav)}>
         <FaBars />
       </button>
-      <input type="checkbox" id="toggle-nav" checked={openNav} />
+      <input type="checkbox" id="toggle-nav" defaultChecked={openNav} />
       <Sidebar />
       <div id="overlay-mb" onClick={() => setOpenNav(false)}></div>
       {props.children}
