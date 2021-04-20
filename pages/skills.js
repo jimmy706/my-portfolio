@@ -6,8 +6,7 @@ function SkillsPage() {
   return (
     <div>
       <Head>
-        <title>My skills</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>My abilities</title>
       </Head>
       <Layout>
         <MainContent>

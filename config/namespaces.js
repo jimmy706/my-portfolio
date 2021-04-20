@@ -1,0 +1,1 @@
+export const LANDING_URL = 'https://my-portfolio.jimdangquoc706.vercel.app';

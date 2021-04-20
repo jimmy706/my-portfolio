@@ -1,6 +1,6 @@
 ---
-title: Second blog
-description: My second blog
+title: Third blog
+description: My third blog
 preview_image: https://drive.google.com/uc?export=view&id=1ZcAwIlkTVq8ZPX1X7CQ-xumP9USlBg3L
 ---
 

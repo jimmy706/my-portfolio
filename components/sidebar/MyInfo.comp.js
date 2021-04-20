@@ -1,4 +1,5 @@
-import { FaGithub, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaFacebookSquare, FaLinkedin, FaPhone } from "react-icons/fa";
+import { IoMdMailUnread } from 'react-icons/io'
 
 export default function MyInfo() {
   return (
@@ -28,6 +29,16 @@ export default function MyInfo() {
             title="Linkedin"
           >
             <FaLinkedin />
+          </a>
+        </li>
+        <li>
+          <a href='mailto:jim.dangquoc706@gmail.com'>
+            <IoMdMailUnread />
+          </a>
+        </li>
+        <li>
+          <a href='tel:+84919886970'>
+            <FaPhone />
           </a>
         </li>
       </ul>

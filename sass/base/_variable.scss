@@ -2,3 +2,15 @@ $active-link: #3239f6;
 $black: #000;
 $paragraph: #444;
 $white: #fff;
+
+@mixin maxWidth($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin minWidth($size) {
+    @media screen and (min-width: $size) {
+        @content;
+    }
+}

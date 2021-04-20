@@ -6,14 +6,16 @@
 // TODO: Layouts
 @import "./layouts/_wrapper";
 @import "./layouts/_main-content";
+@import "./layouts/article-layout";
+@import "./layouts/article-content";
 
 // TODO: Components
 @import "./components/_sidebar";
 @import "./components/_text";
 @import "./components/_button";
-@import "./components/_project-list";
 @import "./components/_timeline";
 @import "./components/_skills";
 @import "./components/_loader";
 @import "./components/_form";
 @import "./components/_about";
+@import "./components/article";

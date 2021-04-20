@@ -1,11 +1,16 @@
-.title{
+.title {
     font-size: 2rem;
     font-weight: 550;
     position: relative;
     display: inline-block;
     margin-bottom: 100px;
-    &::before{
-        content: '';
+
+    &--article {
+        margin-bottom: 40px;
+    }
+
+    &::before {
+        content: "";
         width: 100%;
         height: 2px;
         position: absolute;

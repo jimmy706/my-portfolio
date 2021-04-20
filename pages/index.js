@@ -2,70 +2,27 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import Layout from "../components/Layout.comp";
 import MainContent from "../components/MainContent.comp";
-import HomeData from "../constant/home.data";
 import Head from "next/head";
 import dayjs from 'dayjs';
+import BlogItem from '../components/blog-item/BlogItem';
 
-function BlogItem(props) {
-  const { projectName, desc, source, demo, madeBy } = props.projectDetail;
-  return (
-    <li>
-      <article className="project-comp">
-        <h4 className="project-name">{projectName}</h4>
-        <p className="desc">{desc}</p>
-        <div className="tech">
-          <span>Made by:</span>
-          <span>
-            {madeBy.map(item => (
-              <img
-                src={item.img}
-                alt={item.toolName}
-                title={item.toolName}
-                key={item.toolName}
-              />
-            ))}
-          </span>
-        </div>
-        <div className="btn-wrapper">
-          {source && (
-            <a
-              href={source}
-              className="btn"
-              title="View source code"
-              target="_blank"
-            >
-              Source
-            </a>
-          )}
-          {demo && (
-            <a href={demo} className="btn" title="View demo" target="_blank">
-              Demo
-            </a>
-          )}
-        </div>
-      </article>
-    </li>
-  );
-}
+
 
 function HomePage(props) {
 
-  console.log(props)
-
   function renderBlogs(posts) {
-    return posts.map(p => <BlogItem blog={blog} />)
+    return posts.map(p => <li key={p.slug}><BlogItem blog={p} /></li>)
   }
 
   return (
     <div>
       <Head>
         <title>Dang Quoc Dung - Web developer</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Layout>
-        <MainContent>
+        <MainContent articleContent={true}>
           <ul>
-
+            {renderBlogs(props.results)}
           </ul>
         </MainContent>
       </Layout>
@@ -82,7 +39,6 @@ export async function getServerSideProps(context) {
     const markdownToObject = matter(markdownContent);
     const { title, description, preview_image } = markdownToObject.data;
     const stats = fs.statSync(`blogs/${filename}`);
-
     return {
       slug: filename.replace('.md', ''),
       title,

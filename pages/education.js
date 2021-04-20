@@ -33,7 +33,6 @@ export default function EducationPage() {
     <div>
       <Head>
         <title>My education</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Layout>
         <MainContent>

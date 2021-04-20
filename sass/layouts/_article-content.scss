@@ -1,0 +1,41 @@
+#article-content {
+    width: 100%;
+    padding: 50px 0;
+    overflow: {
+        y: auto;
+        x: hidden;
+    }
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #fff;
+    .container--posts {
+        position: relative;
+    }
+    .article-nav {
+        position: sticky;
+        top: 200px;
+        left: 0;
+        width: 120px;
+        transform: translateX(-80%);
+        @include maxWidth(900px) {
+            display: none;
+        }
+        a {
+            font-size: 0.9rem;
+            font-weight: 300;
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #efefef;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            color: #454546;
+        }
+        .nav-item {
+            margin-bottom: 10px;
+        }
+    }
+}
