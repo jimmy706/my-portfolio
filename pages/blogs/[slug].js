@@ -30,7 +30,7 @@ export default BlogDetailPage;
 
 export async function getServerSideProps(context) {
     const { slug } = context.params;
-    const file = fs.readFileSync(`blogs/${slug}.md`);
+    const file = fs.readFileSync(`${process.cwd()}/blogs/${slug}.md`);
     const markdownToObject = matter(file.toString());
 
     const { title, description, preview_image } = markdownToObject.data;

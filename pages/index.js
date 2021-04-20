@@ -31,14 +31,14 @@ function HomePage(props) {
 }
 
 export async function getServerSideProps(context) {
-  const files = fs.readdirSync("blogs");
+  const files = fs.readdirSync(`${process.cwd()}/blogs`);
 
   const posts = files.map((filename) => {
 
     const markdownContent = fs.readFileSync(`blogs/${filename}`).toString();
     const markdownToObject = matter(markdownContent);
     const { title, description, preview_image } = markdownToObject.data;
-    const stats = fs.statSync(`blogs/${filename}`);
+    const stats = fs.statSync(`${process.cwd()}/blogs/${filename}`);
     return {
       slug: filename.replace('.md', ''),
       title,
