@@ -8,12 +8,13 @@
     #loading_text_pattern {
         color: $white;
         .rect-color {
+            color: $white;
             width: 100%;
             height: 100%;
             fill: currentColor;
         }
         .rect-animate {
-            color: #ddd;
+            color: #868686;
             width: 100%;
             height: 100%;
             fill: currentColor;
@@ -32,6 +33,15 @@
         fill: url(#loading_text_pattern);
         white-space: normal;
         font-weight: bold;
+        @include maxWidth($xl) {
+            font-size: 2rem;
+        }
+        @include maxWidth($md) {
+            font-size: 1.5rem;
+        }
+        @include maxWidth($sm) {
+            font-size: 1rem;
+        }
     }
     .black-box {
         background-color: $black;

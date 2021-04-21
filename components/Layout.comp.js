@@ -6,18 +6,16 @@ function Layout(props) {
   const [openNav, setOpenNav] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const loaded = JSON.stringify(sessionStorage.getItem('loaded'));
-  //   if (loaded) {
-  //     setLoading(false);
-  //   }
-  //   else {
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //       sessionStorage.setItem("loaded", "1");
-  //     }, 2000);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const loaded = sessionStorage.getItem('loaded');
+
+    if (loaded !== null) {
+      setLoading(false);
+    }
+    else {
+      sessionStorage.setItem('loaded', '1');
+    }
+  }, []);
   return (
     <div className="wrapper">
       {loading && <LoadingOverlay />}

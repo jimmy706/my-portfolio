@@ -10,7 +10,7 @@ function LoadingOverlay() {
         animate: {
             display: 'none',
             transition: {
-                delay: 4
+                when: 'afterChildren'
             }
         }
     }
@@ -25,7 +25,8 @@ function LoadingOverlay() {
             bottom: '-100%',
             transition: {
                 duration: 1.5,
-                ease: [1, 0, 0.13, 0.8]
+                ease: [1, 0, 0.13, 0.8],
+                when: 'afterChildren'
             }
         }
     }
@@ -46,6 +47,32 @@ function LoadingOverlay() {
         }
     }
 
+    const textWrapper = {
+        initial: {
+            opacity: 1
+        },
+        animate: {
+            opacity: 0,
+            transition: {
+                duration: 0.5,
+                when: 'afterChildren'
+            }
+        }
+    }
+
+    const textTransform = {
+        initial: {
+            y: 0
+        },
+        animate: {
+            y: 300,
+            transition: {
+                duration: 1.5,
+                ease: [0.8, 0.1, 0.2, 0.8]
+            }
+        }
+    }
+
     return (
         <motion.div
             className='loading-overlay'
@@ -56,22 +83,26 @@ function LoadingOverlay() {
             <motion.div
                 className='white-box'
                 variants={whitebox}
-                initial='initial'
-                animate='animate'>
+            >
 
             </motion.div>
             <motion.div
                 variants={blackbox}
-                initial='initial'
-                animate='animate'
                 className='black-box'>
-                <motion.svg className='text-wrapper'>
+                <motion.svg
+                    className='text-wrapper'
+                    variants={textWrapper} >
+
                     <pattern
                         id='loading_text_pattern'
                         width='100%'
                         height='400'>
                         <rect className='rect-color' />
-                        <motion.rect className='rect-animate' />
+                        <motion.rect
+                            className='rect-animate'
+                            variants={textTransform} >
+                        </motion.rect>
+
                     </pattern>
                     <text x='50%' y='50%' className='main-text' textAnchor='middle' >
                         Quoc Dung - Web developer

@@ -3,6 +3,12 @@ $black: #000;
 $paragraph: #444;
 $white: #fff;
 
+$xxl: 1500px;
+$xl: 1280px;
+$lg: 1080px;
+$md: 750px;
+$sm: 500px;
+
 @mixin maxWidth($size) {
     @media screen and (max-width: $size) {
         @content;
