@@ -5,7 +5,7 @@ import MainContent from "../components/MainContent.comp";
 import Head from "next/head";
 import dayjs from 'dayjs';
 import BlogItem from '../components/blog-item/BlogItem';
-
+import { motion } from 'framer-motion';
 
 
 function HomePage(props) {
@@ -15,7 +15,7 @@ function HomePage(props) {
   }
 
   return (
-    <div>
+    <motion.div exit={{ opacity: 0 }}>
       <Head>
         <title>Dang Quoc Dung - Web developer</title>
       </Head>
@@ -26,7 +26,7 @@ function HomePage(props) {
           </ul>
         </MainContent>
       </Layout>
-    </div>
+    </motion.div>
   );
 }
 

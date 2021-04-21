@@ -1,10 +1,11 @@
 import Layout from "../components/Layout.comp";
 import MainContent from "../components/MainContent.comp";
 import Head from "next/head";
+import { motion } from 'framer-motion';
 
 function AboutPage() {
   return (
-    <div>
+    <motion.div exit={{ opacity: 0 }} >
       <Head>
         <title>About me</title>
       </Head>
@@ -31,7 +32,7 @@ function AboutPage() {
 
         </MainContent>
       </Layout>
-    </div>
+    </motion.div>
   );
 }
 

@@ -25,6 +25,7 @@
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "dayjs": "^1.10.4",
+    "framer-motion": "^4.1.6",
     "gray-matter": "^4.0.2",
     "next": "^9.5.5",
     "node-sass": "^5.0.0",

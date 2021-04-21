@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import LazyImage from '../lazy-image/LazyImage';
 
 function BlogItem(props) {
     const { slug, title, description, preview_image, date } = props.blog;
@@ -9,7 +8,7 @@ function BlogItem(props) {
         <Link href="/blogs/[slug]" as={`/blogs/${slug}`}>
             <a>
                 <article className="article-row">
-                    <LazyImage src={preview_image} className='article-row__image' />
+                    <img src={preview_image} className='article-row__image' />
                     <h4 className="article-row__title">{title}</h4>
                     <p className="artical-row__desc">{description}</p>
                     <div className="artical-row__date">
